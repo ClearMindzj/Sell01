@@ -4,7 +4,6 @@ import com.imooc.dataobject.ProductCategory;
 import com.imooc.exception.SellException;
 import com.imooc.form.CategoryForm;
 import com.imooc.service.CategoryService;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
