@@ -24,20 +24,20 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">这什么东西</span>
             </button>
-            <a class="navbar-brand" href="Index.html">图书商城</a>
+            <a class="navbar-brand" href="/sell/seller/bookinfo">图书商城</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="Index.html">首页</a></li>
-                <li><a href="Order.html">我的订单</a></li>
-                <li><a href="UserInfo.html">个人中心</a></li>
-                <li><a href="FriendLink.html">友情链接</a></li>
+                <li class="active"><a href="Index.ftl">首页</a></li>
+                <li><a href="Order.ftl">我的订单</a></li>
+                <li><a href="UserInfo.ftl">个人中心</a></li>
+                <li><a href="FriendLink.ftl">友情链接</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right hidden-sm">
-                <li><a href="Login.html">登录</a></li>
-                <li><a href="Register.html">注册</a></li>
+                <li><a href="Login.ftl">登录</a></li>
+                <li><a href="Register.ftl">注册</a></li>
                 <li>
-                    <a href="Cart.html"><span class="glyphicon glyphicon-shopping-cart">购物车</span></a></li>
+                    <a href="Cart.ftl"><span class="glyphicon glyphicon-shopping-cart">购物车</span></a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -78,22 +78,11 @@
                 </div>
             </form>
         </div>
-        <div class="col-sm-6">
-            <div class="caption">
-                <h3>免责声明</h3>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-
-            </div>
-
-        </div>
 
     </div>
 </div>
 
 
-<!--footer-->
-<div class="navbar navbar-default navbar-static-bottom">
-    版权声明区
-</div>
+
 </body>
 </html>

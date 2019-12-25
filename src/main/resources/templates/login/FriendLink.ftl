@@ -3,11 +3,11 @@
 <head lang="en">
     <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="../bootstrap-3.3.4/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../Flat-UI-master/dist/css/flat-ui.min.css"/>
-    <script src="../Flat-UI-master/dist/js/vendor/jquery.min.js"></script>
-    <script src="../bootstrap-3.3.4/dist/js/bootstrap.min.js"></script>
-    <script src="../Flat-UI-master/dist/js/flat-ui.min.js"></script>
+    <link rel="stylesheet" href="../../static/bootstrap-3.3.4/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../static/Flat-UI-master/dist/css/flat-ui.min.css"/>
+    <script src="../../static/Flat-UI-master/dist/js/vendor/jquery.min.js"></script>
+    <script src="../../static/bootstrap-3.3.4/dist/js/bootstrap.min.js"></script>
+    <script src="../../static/Flat-UI-master/dist/js/flat-ui.min.js"></script>
     <title></title>
     <style>
         .row{
@@ -48,7 +48,7 @@
     </style>
     <script>
         function myClick(n){
-            location.href = "OrderInfo.html";
+            location.href = "OrderInfo.ftl";
         }
         function btnClick(){
             alert("btn");
@@ -75,20 +75,20 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">这什么东西</span>
             </button>
-            <a class="navbar-brand" href="Index.html">图书商城</a>
+            <a class="navbar-brand" href="Index.ftl">图书商城</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="Index.html">首页</a></li>
-                <li><a href="Order.html">我的订单</a></li>
-                <li><a href="UserInfo.html">个人中心</a></li>
-                <li><a href="FriendLink.html">友情链接</a></li>
+                <li class="active"><a href="Index.ftl">首页</a></li>
+                <li><a href="Order.ftl">我的订单</a></li>
+                <li><a href="UserInfo.ftl">个人中心</a></li>
+                <li><a href="FriendLink.ftl">友情链接</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right hidden-sm">
-                <li><a href="Login.html">登录</a></li>
-                <li><a href="Register.html">注册</a></li>
+                <li><a href="Login.ftl">登录</a></li>
+                <li><a href="Register.ftl">注册</a></li>
                 <li>
-                    <a href="Cart.html"><span class="glyphicon glyphicon-shopping-cart">购物车</span></a></li>
+                    <a href="Cart.ftl"><span class="glyphicon glyphicon-shopping-cart">购物车</span></a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -98,42 +98,42 @@
     <div class="row">
         <div class="col-sm-4 col-md-3">
             <div class="thumbnail" >
-                <a href="BookInfo.html">
+                <a href="BookInfo.ftl">
                     <img style="width: 100%; height: 200px; display: block;" alt="100%x200" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNDggMjAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIG1lZXQiIHdpZHRoPSIzNDgiIGhlaWdodD0iMjAwIj48ZGVmcyAvPjxyZWN0IGZpbGw9IiNlZWVlZWUiIHdpZHRoPSIzNDgiIGhlaWdodD0iMjAwIiAvPjxnPjx0ZXh0IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7IGZvbnQtc2l6ZTogMjJweDsgZm9udC13ZWlnaHQ6IGJvbGQ7IGRvbWluYW50LWJhc2VsaW5lOiBjZW50cmFsOyBmaWxsOiAjYWFhYWFhOyIgeD0iMTMxLjE2IiB5PSIxMDAiPjM0OHgyMDA8L3RleHQ+PC9nPjwvc3ZnPg==" data-src="holder.js/100%x200" data-holder-rendered="true">
                 </a>
             </div>
         </div>
         <div class="col-sm-4 col-md-3">
             <div class="thumbnail" >
-                <a href="BookInfo.html">
+                <a href="BookInfo.ftl">
                     <img style="width: 100%; height: 200px; display: block;" alt="100%x200" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNDggMjAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIG1lZXQiIHdpZHRoPSIzNDgiIGhlaWdodD0iMjAwIj48ZGVmcyAvPjxyZWN0IGZpbGw9IiNlZWVlZWUiIHdpZHRoPSIzNDgiIGhlaWdodD0iMjAwIiAvPjxnPjx0ZXh0IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7IGZvbnQtc2l6ZTogMjJweDsgZm9udC13ZWlnaHQ6IGJvbGQ7IGRvbWluYW50LWJhc2VsaW5lOiBjZW50cmFsOyBmaWxsOiAjYWFhYWFhOyIgeD0iMTMxLjE2IiB5PSIxMDAiPjM0OHgyMDA8L3RleHQ+PC9nPjwvc3ZnPg==" data-src="holder.js/100%x200" data-holder-rendered="true">
                 </a>
             </div>
         </div>
         <div class="col-sm-4 col-md-3">
             <div class="thumbnail" >
-                <a href="BookInfo.html">
+                <a href="BookInfo.ftl">
                     <img style="width: 100%; height: 200px; display: block;" alt="100%x200" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNDggMjAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIG1lZXQiIHdpZHRoPSIzNDgiIGhlaWdodD0iMjAwIj48ZGVmcyAvPjxyZWN0IGZpbGw9IiNlZWVlZWUiIHdpZHRoPSIzNDgiIGhlaWdodD0iMjAwIiAvPjxnPjx0ZXh0IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7IGZvbnQtc2l6ZTogMjJweDsgZm9udC13ZWlnaHQ6IGJvbGQ7IGRvbWluYW50LWJhc2VsaW5lOiBjZW50cmFsOyBmaWxsOiAjYWFhYWFhOyIgeD0iMTMxLjE2IiB5PSIxMDAiPjM0OHgyMDA8L3RleHQ+PC9nPjwvc3ZnPg==" data-src="holder.js/100%x200" data-holder-rendered="true">
                 </a>
             </div>
         </div>
         <div class="col-sm-4 col-md-3">
             <div class="thumbnail" >
-                <a href="BookInfo.html">
+                <a href="BookInfo.ftl">
                     <img style="width: 100%; height: 200px; display: block;" alt="100%x200" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNDggMjAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIG1lZXQiIHdpZHRoPSIzNDgiIGhlaWdodD0iMjAwIj48ZGVmcyAvPjxyZWN0IGZpbGw9IiNlZWVlZWUiIHdpZHRoPSIzNDgiIGhlaWdodD0iMjAwIiAvPjxnPjx0ZXh0IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7IGZvbnQtc2l6ZTogMjJweDsgZm9udC13ZWlnaHQ6IGJvbGQ7IGRvbWluYW50LWJhc2VsaW5lOiBjZW50cmFsOyBmaWxsOiAjYWFhYWFhOyIgeD0iMTMxLjE2IiB5PSIxMDAiPjM0OHgyMDA8L3RleHQ+PC9nPjwvc3ZnPg==" data-src="holder.js/100%x200" data-holder-rendered="true">
                 </a>
             </div>
         </div>
         <div class="col-sm-4 col-md-3">
             <div class="thumbnail" >
-                <a href="BookInfo.html">
+                <a href="BookInfo.ftl">
                     <img style="width: 100%; height: 200px; display: block;" alt="100%x200" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNDggMjAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIG1lZXQiIHdpZHRoPSIzNDgiIGhlaWdodD0iMjAwIj48ZGVmcyAvPjxyZWN0IGZpbGw9IiNlZWVlZWUiIHdpZHRoPSIzNDgiIGhlaWdodD0iMjAwIiAvPjxnPjx0ZXh0IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7IGZvbnQtc2l6ZTogMjJweDsgZm9udC13ZWlnaHQ6IGJvbGQ7IGRvbWluYW50LWJhc2VsaW5lOiBjZW50cmFsOyBmaWxsOiAjYWFhYWFhOyIgeD0iMTMxLjE2IiB5PSIxMDAiPjM0OHgyMDA8L3RleHQ+PC9nPjwvc3ZnPg==" data-src="holder.js/100%x200" data-holder-rendered="true">
                 </a>
             </div>
         </div>
         <div class="col-sm-4 col-md-3">
             <div class="thumbnail" >
-                <a href="BookInfo.html">
+                <a href="BookInfo.ftl">
                     <img style="width: 100%; height: 200px; display: block;" alt="100%x200" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNDggMjAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIG1lZXQiIHdpZHRoPSIzNDgiIGhlaWdodD0iMjAwIj48ZGVmcyAvPjxyZWN0IGZpbGw9IiNlZWVlZWUiIHdpZHRoPSIzNDgiIGhlaWdodD0iMjAwIiAvPjxnPjx0ZXh0IHN0eWxlPSJmb250LWZhbWlseTogQXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7IGZvbnQtc2l6ZTogMjJweDsgZm9udC13ZWlnaHQ6IGJvbGQ7IGRvbWluYW50LWJhc2VsaW5lOiBjZW50cmFsOyBmaWxsOiAjYWFhYWFhOyIgeD0iMTMxLjE2IiB5PSIxMDAiPjM0OHgyMDA8L3RleHQ+PC9nPjwvc3ZnPg==" data-src="holder.js/100%x200" data-holder-rendered="true">
                 </a>
             </div>

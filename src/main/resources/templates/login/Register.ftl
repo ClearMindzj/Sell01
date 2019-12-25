@@ -3,11 +3,11 @@
 <head lang="en">
     <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="../bootstrap-3.3.4/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../Flat-UI-master/dist/css/flat-ui.min.css"/>
-    <script src="../Flat-UI-master/dist/js/vendor/jquery.min.js"></script>
-    <script src="../bootstrap-3.3.4/dist/js/bootstrap.min.js"></script>
-    <script src="../Flat-UI-master/dist/js/flat-ui.min.js"></script>
+    <link rel="stylesheet" href="../../static/bootstrap-3.3.4/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../static/Flat-UI-master/dist/css/flat-ui.min.css"/>
+    <script src="../../static/Flat-UI-master/dist/js/vendor/jquery.min.js"></script>
+    <script src="../../static/bootstrap-3.3.4/dist/js/bootstrap.min.js"></script>
+    <script src="../../static/Flat-UI-master/dist/js/flat-ui.min.js"></script>
     <title></title>
     <style>
         .row{
@@ -24,20 +24,20 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">这什么东西</span>
             </button>
-            <a class="navbar-brand" href="Index.html">图书商城</a>
+            <a class="navbar-brand" href="Index.ftl">图书商城</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="Index.html">首页</a></li>
-                <li><a href="Order.html">我的订单</a></li>
-                <li><a href="UserInfo.html">个人中心</a></li>
-                <li><a href="FriendLink.html">友情链接</a></li>
+                <li class="active"><a href="Index.ftl">首页</a></li>
+                <li><a href="Order.ftl">我的订单</a></li>
+                <li><a href="UserInfo.ftl">个人中心</a></li>
+                <li><a href="FriendLink.ftl">友情链接</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right hidden-sm">
-                <li><a href="Login.html">登录</a></li>
-                <li><a href="Register.html">注册</a></li>
+                <li><a href="Login.ftl">登录</a></li>
+                <li><a href="Register.ftl">注册</a></li>
                 <li>
-                    <a href="Cart.html"><span class="glyphicon glyphicon-shopping-cart">购物车</span></a></li>
+                    <a href="Cart.ftl"><span class="glyphicon glyphicon-shopping-cart">购物车</span></a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -46,7 +46,7 @@
 <div class="container">
     <div class="row thumbnail">
         <div class="col-sm-12">
-             <h1 class="text-center" style="margin-bottom: 30px">用户注册</h1>
+             <h1 class="text-center" style="    margin-bottom: 30px">用户注册</h1>
         </div>
         <div class="col-sm-6">
             <form class="form-horizontal caption">

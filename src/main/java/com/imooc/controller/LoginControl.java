@@ -1,6 +1,7 @@
 package com.imooc.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -11,7 +12,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class LoginControl {
 
     @RequestMapping("/login")
+    public String login(Model model){
+        model.addAttribute("uid",1234567);
+        model.addAttribute("name","zj");
+        return "login/Login";
+    }
+    @RequestMapping("/bookinfo")
     public String login(){
-        return "Login";
+        return  "login/BookInfo";
     }
 }
