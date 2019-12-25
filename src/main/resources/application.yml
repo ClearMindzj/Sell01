@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: zhengjie0101
+    url: jdbc:mysql://127.0.0.1/weixin?characterEncoding=utf-8&useSSL=false
+  jpa:
+    show-sql: false
+  jackson:
+    default-property-inclusion: non_null
+  redis:
+    host:
+    port: 6379
+server:
+    context-path: /sell
+
+
+wechat:
+  mpAppId: wx7394976670f8da0c
+  mpAppSecret: 3734f3788e1f6f145628bff552bc6670
+  openAppId: aaa
+  openAppSecret: bbb
+
+projectUrl:
+  wechatMpAuthorize: http://zjsell.natapp1.cc
+  wechatOpenAuthorize: http://zjsell.natapp1.cc
+  sell:
+
