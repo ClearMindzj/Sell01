@@ -21,4 +21,8 @@ public class LoginControl {
     public String login(){
         return  "login/BookInfo";
     }
+    @RequestMapping("/cart")
+    public String cart(){
+        return "login/Cart";
+    }
 }

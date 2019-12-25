@@ -3,11 +3,11 @@
 <head lang="en">
 
 
-    <link rel="stylesheet" href="../../static/bootstrap-3.3.4/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../../static/Flat-UI-master/dist/css/flat-ui.min.css"/>
-    <script src="../../static/Flat-UI-master/dist/js/vendor/jquery.min.js"></script>
-    <script src="../../static/bootstrap-3.3.4/dist/js/bootstrap.min.js"></script>
-    <script src="../../static/Flat-UI-master/dist/js/flat-ui.min.js"></script>
+    <link rel="stylesheet" href="../bootstrap-3.3.4/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../Flat-UI-master/dist/css/flat-ui.min.css"/>
+    <script src="../Flat-UI-master/dist/js/vendor/jquery.min.js"></script>
+    <script src="../bootstrap-3.3.4/dist/js/bootstrap.min.js"></script>
+    <script src="../Flat-UI-master/dist/js/flat-ui.min.js"></script>
     <title></title>
     <style>
         .row{
