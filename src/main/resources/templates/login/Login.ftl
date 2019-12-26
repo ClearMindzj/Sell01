@@ -49,17 +49,17 @@
             <h1 class="text-center" style="margin-bottom: 30px">用户登录</h1>
         </div>
         <div class="col-sm-6">
-            <form class="form-horizontal caption">
+            <form class="form-horizontal caption" method="get" action="/sell/seller/login">
                 <div class="form-group">
                     <label for="username" class="col-sm-3 control-label">用户名</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" id="username" placeholder="用户名">
+                        <input type="text" class="form-control" id="username" placeholder="用户名" name="username">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="password" class="col-sm-3 control-label">密码</label>
                     <div class="col-sm-8">
-                        <input type="password" class="form-control" id="password" placeholder="密码">
+                        <input type="password" class="form-control" id="password" placeholder="密码" name="password">
                     </div>
                 </div>
                 <div class="form-group">
@@ -82,7 +82,9 @@
     </div>
 </div>
 
-
+<div>
+    ${s};
+</div>
 
 </body>
 </html>

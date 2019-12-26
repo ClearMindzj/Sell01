@@ -33,7 +33,6 @@
                         <td>${category.updateTime}</td>
                         <td><a href="/sell/seller/category/index?categoryId=${category.categoryId}">修改</a></td>
                     </tr>
-
                     </tbody>
                     </#list>
                     </table>
