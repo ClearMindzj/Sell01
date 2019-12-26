@@ -19,13 +19,13 @@ public class BuyerServiceImpl implements BuyerService {
     @Autowired
     private OrderService orderService;
     @Override
-    public OrderDTO findOrderOne(String openid, String orderId) {
-       return checkOrderOwener(openid,orderId);
+    public OrderDTO findOrderOne(String userId, String orderId) {
+       return checkOrderOwener(userId,orderId);
     }
 
     @Override
-    public OrderDTO cancelOrder(String openid, String orderId) {
-        OrderDTO orderDTO=checkOrderOwener(openid,orderId);
+    public OrderDTO cancelOrder(String userId, String orderId) {
+        OrderDTO orderDTO=checkOrderOwener(userId,orderId);
         if(orderDTO==null){
             log.error("【取消订单】查不到该订单,orderId={}",orderId);
             throw new SellException(ResultEnum.ORDER_NOT_EXIST);
