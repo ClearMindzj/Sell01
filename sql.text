@@ -1,6 +1,6 @@
 use bookstore;
 create table `userinfo` (
-    `userid` int not null auto_increment,
+    `userid` varchar(64) not null,
     `username` varchar(32) not null,
     `password` varchar(32) not null,
     `gender`   varchar(32) not null,
