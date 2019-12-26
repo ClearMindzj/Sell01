@@ -1,7 +1,6 @@
 package com.imooc.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.imooc.dataobject.OrderDetail;
 import com.imooc.enums.OrderStatusEnum;
@@ -32,8 +31,8 @@ public class OrderDTO {
     //买家地址
     private String buyerAddress;
 
-    //买家微信Openid
-    private String buyerOpenid;
+    //买家userid
+    private String userId;
 
     //订单总金额
     private BigDecimal orderAmount;

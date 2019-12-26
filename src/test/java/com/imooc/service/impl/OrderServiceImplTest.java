@@ -37,7 +37,7 @@ public class OrderServiceImplTest {
         orderDTO.setBuyerName("王潇");
         orderDTO.setBuyerAddress("玄武");
         orderDTO.setBuyerPhone("18852704205");
-        orderDTO.setBuyerOpenid(BUYER_OPENID);
+        orderDTO.setUserId(BUYER_OPENID);
 
         //购物车
         List<OrderDetail> orderDetailList=new ArrayList<>();

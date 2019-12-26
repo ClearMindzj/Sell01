@@ -34,8 +34,8 @@ public class OrderMaster {
     //买家地址
     private String buyerAddress;
 
-    //买家微信Openid
-    private String buyerOpenid;
+    //买家UserId
+    private String userId;
 
     //订单总金额
     private BigDecimal orderAmount;

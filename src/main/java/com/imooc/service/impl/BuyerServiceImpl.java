@@ -35,14 +35,14 @@ public class BuyerServiceImpl implements BuyerService {
         return orderService.cancel(orderDTO) ;
     }
 
-    private OrderDTO checkOrderOwener(String openid, String orderId){
+    private OrderDTO checkOrderOwener(String userId, String orderId){
         OrderDTO orderDTO=orderService.findOne(orderId);
         if(orderDTO==null){
             return  null;
         }
         //判断是否是自己的订单
-        if(!orderDTO.getBuyerOpenid().equalsIgnoreCase(openid)){
-            log.error("【查询订单】订单的openid不一致. openid={},orderDTO={}",openid,orderDTO);
+        if(!orderDTO.getUserId().equalsIgnoreCase(userId)){
+            log.error("【查询订单】订单的openid不一致. openid={},orderDTO={}",userId,orderDTO);
             throw  new SellException(ResultEnum.ORDER_OWNER_ERROR);
         }
         return orderDTO;

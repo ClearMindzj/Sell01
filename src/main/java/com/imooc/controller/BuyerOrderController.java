@@ -73,7 +73,7 @@ public class BuyerOrderController {
      @GetMapping("/detail")
     public ResultVO<OrderDTO> detail(@RequestParam("openid") String openid,
                                      @RequestParam("orderId") String orderId){
-        //TODO 不安全的做法，改进
+
          OrderDTO orderDTO=buyerService.findOrderOne(openid,orderId);
          return ResultVOUtil.success(orderDTO);
      }
