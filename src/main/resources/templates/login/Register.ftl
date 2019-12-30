@@ -53,19 +53,19 @@
                 <div class="form-group">
                     <label for="username" class="col-sm-3 control-label">用户名</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" id="username" placeholder="用户名">
+                        <input type="text" class="form-control" name="username" id="username" placeholder="用户名">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="password" class="col-sm-3 control-label">密码</label>
                     <div class="col-sm-8">
-                        <input type="password" class="form-control" id="password" placeholder="密码">
+                        <input type="password" class="form-control" name="password" id="password" placeholder="密码">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="password" class="col-sm-3 control-label">确认密码</label>
                     <div class="col-sm-8">
-                        <input type="password" class="form-control" id="password2" placeholder="确认密码">
+                        <input type="password" class="form-control" name="password2" id="password2" placeholder="确认密码">
                     </div>
                 </div>
                 <div class="form-group">
@@ -83,24 +83,24 @@
                 <div class="form-group">
                     <label for="telephone" class="col-sm-3 control-label">电话</label>
                     <div class="col-sm-8">
-                        <input type="tel" class="form-control" id="telephone" placeholder="电话号码">
+                        <input type="tel" class="form-control" name="telephone" id="telephone" placeholder="电话号码">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="address" class="col-sm-3 control-label">地址</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" id="address" placeholder="地址">
+                        <input type="text" class="form-control" name="address" id="address" placeholder="地址">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="email" class="col-sm-3 control-label">邮箱</label>
                     <div class="col-sm-8">
-                        <input type="email" class="form-control" id="email" placeholder="邮箱">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="邮箱">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-3 col-sm-5">
-                        <button type="submit" class="btn btn-success btn-block">注册</button>
+                        <button type="submit" class="btn btn-success btn-block" onclick="return insertManager()">注册</button>
                     </div>
                 </div>
             </form>
@@ -117,10 +117,19 @@
     </div>
 </div>
 
+<script type="text/javascript">
+    function insertManager() {
+        var password = document.getElementById("password").value;
+        var repassword = document.getElementById("repassword").value;
+        if(password!=repassword){
+            window.alert("您输入的新密码与确认密码确认不一致");
+            signupForm.repassword.focus();
+            return false;
 
-<!--footer-->
-<div class="navbar navbar-default navbar-static-bottom">
-    版权声明区
-</div>
+        }
+        return true;
+    }
+</script>
+
 </body>
 </html>
