@@ -6,7 +6,7 @@ import com.minjie.repository.BuyerLoginRepository;
 import com.minjie.service.BuyerLoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
+
 
 import java.util.List;
 
@@ -43,7 +43,7 @@ public class BuyerLoginImpl implements BuyerLoginService {
             return "用户名已经存在";
         }else {
             buyerLoginRepository.save(userInfo);
-            return "注册成功,三秒后跳转到登录界面";
+            return "注册成功,跳转到登录界面";
         }
 
     }
