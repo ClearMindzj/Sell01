@@ -39,7 +39,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right hidden-sm">
                 <li><a href="Login.ftl">登录</a></li>
-                <li><a href="Register.ftl">注册</a></li>
+                <li><a href="/sell/seller/initregister">注册</a></li>
                 <li>
                     <a href="Cart.ftl"><span class="glyphicon glyphicon-shopping-cart">购物车</span></a></li>
             </ul>

@@ -48,8 +48,9 @@
         <div class="col-sm-12">
              <h1 class="text-center" style="    margin-bottom: 30px">用户注册</h1>
         </div>
+
         <div class="col-sm-6">
-            <form class="form-horizontal caption">
+            <form class="form-horizontal caption" method="post" action="/sell/seller/register">
                 <div class="form-group">
                     <label for="username" class="col-sm-3 control-label">用户名</label>
                     <div class="col-sm-8">
@@ -72,10 +73,10 @@
                     <label for="inlineRadio1" class="col-sm-3 control-label">性别</label>
                     <div class="col-sm-8">
                         <label class="radio-inline">
-                            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">男
+                            <input type="radio" name="gender" id="inlineRadio1" value="option1">男
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option1">女
+                            <input type="radio" name="gender" id="inlineRadio2" value="option1">女
                         </label>
                     </div>
 
@@ -83,7 +84,7 @@
                 <div class="form-group">
                     <label for="telephone" class="col-sm-3 control-label">电话</label>
                     <div class="col-sm-8">
-                        <input type="tel" class="form-control" name="telephone" id="telephone" placeholder="电话号码">
+                        <input type="text" class="form-control" name="telephone" id="telephone" placeholder="电话号码">
                     </div>
                 </div>
                 <div class="form-group">
@@ -105,14 +106,7 @@
                 </div>
             </form>
         </div>
-        <div class="col-sm-6">
-            <div class="caption">
-                <h3>免责声明</h3>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
 
-            </div>
-
-        </div>
 
     </div>
 </div>

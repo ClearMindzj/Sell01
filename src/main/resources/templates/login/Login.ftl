@@ -35,7 +35,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right hidden-sm">
                 <li><a href="Login.ftl">登录</a></li>
-                <li><a href="Register.ftl">注册</a></li>
+                <li><a href="">注册</a></li>
                 <li>
                     <a href="/sell/seller/cart"><span class="glyphicon glyphicon-shopping-cart">购物车</span></a></li>
             </ul>
@@ -82,9 +82,7 @@
     </div>
 </div>
 
-<div>
-    ${s};
-</div>
+
 
 </body>
 </html>

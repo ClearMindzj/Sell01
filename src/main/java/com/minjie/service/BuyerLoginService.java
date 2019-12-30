@@ -9,6 +9,6 @@ public interface BuyerLoginService {
 
     String buyerLogin(String username,String password);
 
-    void buyerRegister();
+    String buyerRegister(UserInfo userInfo);
 
 }
