@@ -2,6 +2,7 @@ package com.minjie.controller;
 
 import com.minjie.dataobject.UserInfo;
 import com.minjie.form.UserForm;
+import com.minjie.repository.BuyerLoginRepository;
 import com.minjie.service.BuyerLoginService;
 import com.minjie.utils.KeyUtil;
 import org.springframework.beans.BeanUtils;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.Map;
 
@@ -24,21 +25,39 @@ import java.util.Map;
 public class LoginControl {
     @Autowired
     private BuyerLoginService buyerLoginService;
+    @Autowired
+    private BuyerLoginRepository buyerLoginRepository;
 
 
     @RequestMapping("/start")
     public ModelAndView start(Map<String,Object> map){
-        map.put("msg"," ");
+        map.put("msg","");
         return new ModelAndView("login/Login");
     }
 
     @RequestMapping("/login")
     public ModelAndView login(@RequestParam(value = "username", required = false) String username,
                               @RequestParam(value = "password", required = false) String password,
+                              HttpSession session,
                               Map<String, Object> map) {
+
         String s = buyerLoginService.buyerLogin(username, password);
-        map.put("msg", s);
-        return new ModelAndView("login/Login", map);
+        if(s.equals("登录成功")){
+            UserInfo userInfo=buyerLoginRepository.findByUsername(username);
+            session.setAttribute("user",userInfo);
+            map.put("msg", s);
+            return new ModelAndView("login/index", map);
+        }else {
+            map.put("msg",s);
+            return new ModelAndView("login/Login");
+        }
+
+    }
+
+    @RequestMapping("/loginOut")
+    public ModelAndView loginOut(HttpSession session){
+         session.invalidate();
+        return new ModelAndView("login/Login");
     }
 
     @PostMapping("/register")
@@ -62,10 +81,22 @@ public class LoginControl {
 
     }
 
-
-
-    @RequestMapping("/initregister")
-    public String cart() {
-        return "login/UserInfo";
+    @RequestMapping("/registerInit")
+    public String register() {
+        return "login/Register";
     }
+    @RequestMapping("/demo")
+    public String order() {
+        return "login/Order";
+    }
+
+    @RequestMapping("/demo1")
+    public String orderInfo() {
+        return "login/Index";
+    }
+    @RequestMapping("/bookInfo")
+    public String bookInfo() {
+        return "login/bookInfo";
+    }
+
 }

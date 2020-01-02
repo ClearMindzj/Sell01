@@ -9,5 +9,5 @@ import java.util.List;
  * Created by zhengjie on 2019/12/26.
  */
 public interface BuyerLoginRepository extends JpaRepository<UserInfo,String> {
-    List<UserInfo> findByUsername(String name);
+    UserInfo findByUsername(String name);
 }

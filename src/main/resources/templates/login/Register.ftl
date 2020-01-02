@@ -34,8 +34,12 @@
                 <li><a href="FriendLink.ftl">友情链接</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right hidden-sm">
-                <li><a href="Login.ftl">登录</a></li>
-                <li><a href="Register.ftl">注册</a></li>
+                <#if Session["user"]?exists>
+                    <li>欢迎您：${user.username}</li>
+                <#else>
+                    <li><a href="/sell/seller/start">登录</a></li>
+                </#if>
+                <li><a href="/sell/seller/registerInit">注册</a></li>
                 <li>
                     <a href="Cart.ftl"><span class="glyphicon glyphicon-shopping-cart">购物车</span></a></li>
             </ul>
@@ -48,7 +52,9 @@
         <div class="col-sm-12">
              <h1 class="text-center" style="    margin-bottom: 30px">用户注册</h1>
         </div>
-
+     <div>
+         ${msg!}
+     </div>
         <div class="col-sm-6">
             <form class="form-horizontal caption" method="post" action="/sell/seller/register">
                 <div class="form-group">
@@ -73,10 +79,10 @@
                     <label for="inlineRadio1" class="col-sm-3 control-label">性别</label>
                     <div class="col-sm-8">
                         <label class="radio-inline">
-                            <input type="radio" name="gender" id="inlineRadio1" value="option1">男
+                            <input type="radio" name="gender" id="inlineRadio1" value="男">男
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="gender" id="inlineRadio2" value="option1">女
+                            <input type="radio" name="gender" id="inlineRadio2" value="女">女
                         </label>
                     </div>
 

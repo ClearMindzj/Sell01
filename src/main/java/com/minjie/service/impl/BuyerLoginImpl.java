@@ -21,12 +21,11 @@ public class BuyerLoginImpl implements BuyerLoginService {
 
     @Override
     public String buyerLogin(String username, String password) {
-        List<UserInfo> userInfos=buyerLoginRepository.findByUsername(username);
+        UserInfo userInfo=buyerLoginRepository.findByUsername(username);
         //如果没有查到
-        if (userInfos.size()<=0){
+        if (userInfo==null){
             return "此用户不存在";
         }else {
-            UserInfo userInfo=userInfos.get(0);
             if(userInfo.getPassword().equals(password)){
                 return "登录成功";
             }else {
@@ -38,8 +37,8 @@ public class BuyerLoginImpl implements BuyerLoginService {
 
     @Override
     public String buyerRegister(UserInfo userInfo) {
-        List<UserInfo> userInfoList=buyerLoginRepository.findByUsername(userInfo.getUsername());
-        if(userInfoList.size()>0){
+        UserInfo userInfo1=buyerLoginRepository.findByUsername(userInfo.getUsername());
+        if(userInfo1==null){
             return "用户名已经存在";
         }else {
             buyerLoginRepository.save(userInfo);

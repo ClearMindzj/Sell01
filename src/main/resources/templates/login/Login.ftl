@@ -34,8 +34,8 @@
                 <li><a href="FriendLink.ftl">友情链接</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right hidden-sm">
-                <li><a href="Login.ftl">登录</a></li>
-                <li><a href="">注册</a></li>
+                <li><a href="/sell/seller/start">登录</a></li>
+                <li><a href="/sell/seller/registerInit">注册</a></li>
                 <li>
                     <a href="/sell/seller/cart"><span class="glyphicon glyphicon-shopping-cart">购物车</span></a></li>
             </ul>
@@ -53,13 +53,13 @@
                 <div class="form-group">
                     <label for="username" class="col-sm-3 control-label">用户名</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" id="username" placeholder="用户名" name="username">
+                        <input type="text" class="form-control" id="username" placeholder="用户名" name="username" value="${msg!}">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="password" class="col-sm-3 control-label">密码</label>
                     <div class="col-sm-8">
-                        <input type="password" class="form-control" id="password" placeholder="密码" name="password">
+                        <input type="password" class="form-control" id="password" placeholder="密码" name="password" value="${msg!}">
                     </div>
                 </div>
                 <div class="form-group">
