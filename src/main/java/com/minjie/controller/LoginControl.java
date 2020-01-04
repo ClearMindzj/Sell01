@@ -21,7 +21,7 @@ import java.util.Map;
  * Created by zhengjie on 2019/12/25.
  */
 @Controller
-@RequestMapping("/seller")
+@RequestMapping("/seller/login")
 public class LoginControl {
     @Autowired
     private BuyerLoginService buyerLoginService;

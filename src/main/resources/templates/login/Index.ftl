@@ -3,11 +3,11 @@
 <head lang="en">
     <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="../bootstrap-3.3.4/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../Flat-UI-master/dist/css/flat-ui.min.css"/>
-    <script src="../bootstrap-3.3.4/dist/js/jquery-1.11.3.min.js"></script>
-    <script src="../bootstrap-3.3.4/dist/js/bootstrap.min.js"></script>
-    <script src="../Flat-UI-master/dist/js/flat-ui.min.js"></script>
+    <link rel="stylesheet" href="../../bootstrap-3.3.4/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../Flat-UI-master/dist/css/flat-ui.min.css"/>
+    <script src="../../bootstrap-3.3.4/dist/js/jquery-1.11.3.min.js"></script>
+    <script src="../../bootstrap-3.3.4/dist/js/bootstrap.min.js"></script>
+    <script src="../../Flat-UI-master/dist/js/flat-ui.min.js"></script>
     <title></title>
     <style>
         .row {
@@ -49,11 +49,11 @@
             </ul>
             <ul class="nav navbar-nav navbar-right hidden-sm">
                 <#if Session["user"]?exists>
-                    <li>欢迎您：${user.username}<a href="/sell/seller/loginOut">注销</a></li>
+                    <li>欢迎您：${user.username}<a href="/sell/seller/login/loginOut">注销</a></li>
                 <#else>
-                    <li><a href="/sell/seller/start">登录</a></li>
+                    <li><a href="/sell/seller/login/start">登录</a></li>
                 </#if>
-                <li><a href="/sell/seller/registerInit">注册</a></li>
+                <li><a href="/sell/seller/login/registerInit">注册</a></li>
                 <li>
                     <a href="Cart.ftl"><span class="glyphicon glyphicon-shopping-cart">购物车</span></a></li>
             </ul>
@@ -82,7 +82,7 @@
             <div class="thumbnail">
                 <a href="/sell/seller/bookInfo">
                     <img style="width: 100%; height: 200px; display: block;" alt="100%x200"
-                         src="../images/C.jpg" data-src="holder.js/100%x200" >
+                         src="../../images/c.jpg" data-src="holder.js/100%x200" >
                 </a>
                 <div class="caption center">
                     <h3>书名</h3>
@@ -95,7 +95,7 @@
             <div class="thumbnail">
                 <a href="BookInfo.ftl">
                     <img style="width: 100%; height: 200px; display: block;" alt="100%x200"
-                         src="../images/hexin.jpg" data-src="holder.js/100%x200"
+                         src="../../images/hexin.jpg" data-src="holder.js/100%x200"
                          >
                 </a>
                 <div class="caption center">

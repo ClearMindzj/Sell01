@@ -3,11 +3,11 @@
 <head lang="en">
     <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="../bootstrap-3.3.4/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../Flat-UI-master/dist/css/flat-ui.min.css"/>
-    <script src="../Flat-UI-master/dist/js/vendor/jquery.min.js"></script>
-    <script src="../bootstrap-3.3.4/dist/js/bootstrap.min.js"></script>
-    <script src="../Flat-UI-master/dist/js/flat-ui.min.js"></script>
+    <link rel="stylesheet" href="../../bootstrap-3.3.4/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../Flat-UI-master/dist/css/flat-ui.min.css"/>
+    <script src="../../Flat-UI-master/dist/js/vendor/jquery.min.js"></script>
+    <script src="../../bootstrap-3.3.4/dist/js/bootstrap.min.js"></script>
+    <script src="../../Flat-UI-master/dist/js/flat-ui.min.js"></script>
     <title></title>
     <style>
         .row{
@@ -37,9 +37,9 @@
                 <#if Session["user"]?exists>
                     <li>欢迎您：${user.username}</li>
                 <#else>
-                    <li><a href="/sell/seller/start">登录</a></li>
+                    <li><a href="/sell/seller/login/start">登录</a></li>
                 </#if>
-                <li><a href="/sell/seller/registerInit">注册</a></li>
+                <li><a href="/sell/seller/login/registerInit">注册</a></li>
                 <li>
                     <a href="Cart.ftl"><span class="glyphicon glyphicon-shopping-cart">购物车</span></a></li>
             </ul>
