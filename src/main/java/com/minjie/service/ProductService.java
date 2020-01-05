@@ -4,6 +4,7 @@ import com.minjie.dataobject.ProductInfo;
 import com.minjie.dto.CartDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 
 import java.util.List;
 
@@ -17,6 +18,8 @@ public interface ProductService {
     List<ProductInfo> findUpAll();
 
     Page<ProductInfo> findAll(Pageable pageable);  //参数是用来分页的
+
+    Page<ProductInfo> findPageData(Specification<ProductInfo> specification, Pageable pageable);
 
     List<ProductInfo> findByCategoryType(Integer categoryType);
 

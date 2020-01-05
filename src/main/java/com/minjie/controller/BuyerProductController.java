@@ -4,6 +4,7 @@ import com.minjie.VO.ProductInfoVO;
 import com.minjie.VO.ProductVO;
 import com.minjie.dataobject.ProductCategory;
 import com.minjie.dataobject.ProductInfo;
+import com.minjie.enums.ProductStatusEnum;
 import com.minjie.service.CategoryService;
 import com.minjie.service.ProductService;
 import org.springframework.beans.BeanUtils;
@@ -57,9 +58,9 @@ public class BuyerProductController {
             productVO.setCategoryType(productCategory.getCategoryType());
             productVO.setCategoryName(productCategory.getCategoryName());
 
-
             for(ProductInfo productInfo:productInfoList){
-                if(productInfo.getCategoryType().equals(productCategory.getCategoryType())){
+                if(productInfo.getCategoryType().equals(productCategory.getCategoryType())&&
+                productInfo.getProductStatus().equals(ProductStatusEnum.Up.getCode())){
                     ProductInfoVO productInfoVO=new ProductInfoVO();
                     //productInfo属性值拷贝到后面一个
                     BeanUtils.copyProperties(productInfo,productInfoVO);

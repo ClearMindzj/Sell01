@@ -70,7 +70,7 @@
 
     <ul class="nav nav-tabs" id="myTabs">
         <li class="active"><a href="#">计算机</a></li>
-        <li><a href="#">都市言情</a></li>
+        <li><a href="#">文学</a></li>
         <li><a href="#">军事科技</a></li>
         <li><a href="#">历史人文</a></li>
         <li><a href="#">金融财会</a></li>
@@ -83,7 +83,7 @@
         <div class="col-sm-4 col-md-3">
             <div class="thumbnail">
                 <a href="/sell/seller/bookInfo">
-                    <img style="width: 100%; height: 230px; display: block;" alt="100%x200"
+                    <img style="width: 100%; height: 200px; display: block;" alt="100%x200"
                          src="${productInfoVOList.productIcon}" data-src="holder.js/100%x200" >
                 </a>
                 <div class="caption center">
@@ -101,7 +101,7 @@
     <nav class="center">
         <ul class="pagination  pagination-lg">
             <li>
-                <a href="/sell/buyer/product/list" aria-label="Previous">
+                <a href="/sell/buyer/product/list?page=1" aria-label="Previous">
                     <span aria-hidden="true">首页</span>
                 </a>
             </li>
