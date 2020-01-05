@@ -35,7 +35,7 @@ public class CategoryServiceImplTest {
 
     @Test
     public void findByCategoryTypeIn() throws Exception {
-        List<ProductCategory> productCategoryList=categoryService.findByCategoryTypeIn(Arrays.asList(1,2,3));
+        List<ProductCategory> productCategoryList=categoryService.findByCategoryType(1);
     }
 
     @Test

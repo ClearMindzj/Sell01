@@ -18,6 +18,8 @@ public interface ProductService {
 
     Page<ProductInfo> findAll(Pageable pageable);  //参数是用来分页的
 
+    List<ProductInfo> findByCategoryType(Integer categoryType);
+
     ProductInfo save(ProductInfo productInfo);
 
     //加库存

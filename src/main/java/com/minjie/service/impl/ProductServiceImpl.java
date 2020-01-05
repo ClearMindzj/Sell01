@@ -29,6 +29,8 @@ public class ProductServiceImpl implements ProductService{
         return repository.findOne(productId);
     }
 
+
+
     @Override
     public List<ProductInfo> findUpAll() {
         return repository.findByProductStatus(ProductStatusEnum.Up.getCode());
@@ -37,6 +39,11 @@ public class ProductServiceImpl implements ProductService{
     @Override
     public Page<ProductInfo> findAll(Pageable pageable) {
         return repository.findAll(pageable);
+    }
+
+    @Override
+    public List<ProductInfo> findByCategoryType(Integer categoryType) {
+        return repository.findByProductStatus(categoryType);
     }
 
     @Override
