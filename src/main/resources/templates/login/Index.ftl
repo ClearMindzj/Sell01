@@ -100,12 +100,12 @@
 
     <nav class="center">
         <ul class="pagination  pagination-lg">
-            <#if
             <li>
-                <a href="/sell/buyer/" aria-label="Previous">
+                <a href="/sell/buyer/product/list" aria-label="Previous">
                     <span aria-hidden="true">首页</span>
                 </a>
             </li>
+
             <li><a href="#">1</a></li>
             <li><a href="#">2</a></li>
             <li><a href="#">3</a></li>
