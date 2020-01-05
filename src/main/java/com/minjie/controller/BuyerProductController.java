@@ -49,7 +49,6 @@ public class BuyerProductController {
 //            categoryTypeList.add(productInfo.getCategoryType());
 //        }
         //精简方法(JAVA 8,lambda)
-
         List<ProductCategory> productCategoryList= categoryService.findByCategoryType(categoryType);
         //3.数据拼装
         List<ProductInfoVO> productInfoVOList=new ArrayList<>();
