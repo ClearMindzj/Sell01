@@ -10,9 +10,7 @@ import com.minjie.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
-
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -42,16 +40,10 @@ public class ProductServiceImpl implements ProductService{
         return repository.findAll(pageable);
     }
 
-    @Override
-    public Page<ProductInfo> findPageData(Specification<ProductInfo> specification, Pageable pageable) {
-        return repository.findAll(specification,pageable);
-    }
-
-
 
     @Override
-    public List<ProductInfo> findByCategoryType(Integer categoryType) {
-        return repository.findByProductStatus(categoryType);
+    public Page<ProductInfo> findByCategoryTypeAndProductStatus(Integer categoryType,Integer productStatus,Pageable pageable) {
+        return repository.findProductInfoByCategoryTypeAndProductStatus(categoryType,productStatus,pageable);
     }
 
     @Override
