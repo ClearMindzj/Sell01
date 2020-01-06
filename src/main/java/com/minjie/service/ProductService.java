@@ -19,7 +19,9 @@ public interface ProductService {
 
     Page<ProductInfo> findAll(Pageable pageable);  //参数是用来分页的
 
+    //分页查询每个类别上架商品
     Page<ProductInfo> findByCategoryTypeAndProductStatus(Integer categoryType,Integer productStatus,Pageable pageable);
+
 
     ProductInfo save(ProductInfo productInfo);
 

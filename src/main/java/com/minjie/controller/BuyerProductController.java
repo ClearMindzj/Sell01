@@ -31,8 +31,6 @@ public class BuyerProductController {
 
     @Autowired
     private ProductService productService;
-    @Autowired
-    private CategoryService categoryService;
     @GetMapping("/list")
     public ModelAndView list(@RequestParam("categoryType") Integer categoryType,
                              @RequestParam(value = "page",defaultValue = "1") Integer page,
@@ -73,5 +71,13 @@ public class BuyerProductController {
         map.put("currentPage",page);
         map.put("categoryType",categoryType);
         return new ModelAndView("/login/Index",map);
+    }
+    @GetMapping("/detail")
+    public ModelAndView detail(@RequestParam("productId")String productId,
+                               Map<String,Object> map){
+        //查询单个物品详情
+        ProductInfo productInfo=productService.findOne(productId);
+        map.put("productInfo",productInfo);
+        return  new ModelAndView("/login/BookInfo");
     }
 }
