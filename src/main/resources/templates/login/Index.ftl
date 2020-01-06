@@ -69,7 +69,7 @@
     </div>
 
     <ul class="nav nav-tabs" id="myTabs">
-        <li class="active"><a href="#">计算机</a></li>
+        <li class="active"><a href="/sell/buyer/product/list?categoryType=1">计算机</a></li>
         <li><a href="#">文学</a></li>
         <li><a href="#">军事科技</a></li>
         <li><a href="#">历史人文</a></li>
@@ -79,16 +79,16 @@
     </ul>
 
     <div class="row">
-        <#list productInfoVOList as productInfoVOList>
+        <#list productInfoList.content as productInfoList>
         <div class="col-sm-4 col-md-3">
             <div class="thumbnail">
                 <a href="/sell/seller/bookInfo">
                     <img style="width: 100%; height: 200px; display: block;" alt="100%x200"
-                         src="${productInfoVOList.productIcon}" data-src="holder.js/100%x200" >
+                         src="${productInfoList.productIcon}" data-src="holder.js/100%x200" >
                 </a>
                 <div class="caption center">
-                    <h5>${productInfoVOList.productName}</h5>
-                    <p><span>价格:</span><span>${productInfoVOList.productPrice}</span></p>
+                    <h5>${productInfoList.productName}</h5>
+                    <p><span>价格:</span><span>${productInfoList.productPrice}</span></p>
                     <p><a class="btn btn-primary btn-block" role="button" href="/sell/seller/bookInfo">查看详情</a></p>
                 </div>
             </div>
@@ -101,18 +101,30 @@
     <nav class="center">
         <ul class="pagination  pagination-lg">
             <li>
-                <a href="/sell/buyer/product/list?page=1" aria-label="Previous">
+                <a href="/sell/buyer/product/list?page=1&categoryType=${categoryType}" aria-label="Previous">
                     <span aria-hidden="true">首页</span>
                 </a>
             </li>
+            <#if currentPage lte 1>
+            <li><a href="#">上一页</a></li>
+            <#else>
+                <li><a href="/sell/buyer/product/list?page=${currentPage-1}&categoryType=${categoryType}">上一页</a></li>
+            </#if>
+            <#list 1..productInfoList.getTotalPages() as index>
+                <#if currentPage==index>
+                    <li class="disabled"><a href="#">${index}</a></li>
+                <#else>
+                    <li><a href="/sell/buyer/product/list?page=${index}&&categoryType=${categoryType}">${index}</a></li>
+                </#if>
 
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
+            </#list>
+            <#if currentPage gte productInfoList.getTotalPages()>
+                <li class="disabled"><a href="#">下一页</a></li>
+            <#else>
+                <li><a href="/sell/buyer/product/list?page=${currentPage+1}&categoryType=${categoryType}">下一页</a></li>
+            </#if>
             <li>
-                <a href="#" aria-label="Next">
+                <a href="/sell/buyer/product/list?page=${productInfoList.totalPages}&categoryType=${categoryType}" aria-label="Next">
                     <span aria-hidden="true">末页</span>
                 </a>
             </li>

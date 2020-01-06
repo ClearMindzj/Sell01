@@ -42,7 +42,8 @@ public class BuyerProductController {
 
         //1.查询所有上架商品
        Page<ProductInfo> productInfoList= productService.findByCategoryTypeAndProductStatus(categoryType,ProductStatusEnum.Up.getCode(),request);
-        //2.查询类目(一次性查询)
+
+ /*       //2.查询类目(一次性查询)
    //    List<Integer> categoryTypeList=new ArrayList<>();
        //传统方法
 //        for(ProductInfo productInfo:productInfoList){
@@ -67,10 +68,10 @@ public class BuyerProductController {
                 }
             }
 
-        }
-        map.put("productInfoVOList",productInfoVOList);
+        }*/
+        map.put("productInfoList",productInfoList);
         map.put("currentPage",page);
-        map.put("size",size);
+        map.put("categoryType",categoryType);
         return new ModelAndView("/login/Index",map);
     }
 }
