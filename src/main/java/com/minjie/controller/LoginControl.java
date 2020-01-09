@@ -92,7 +92,7 @@ public class LoginControl {
 
     @RequestMapping("/demo1")
     public String orderInfo() {
-        return "login/Index";
+        return "login/UserInfo";
     }
     @RequestMapping("/bookInfo")
     public String bookInfo() {
