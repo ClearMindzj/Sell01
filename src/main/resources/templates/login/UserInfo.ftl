@@ -75,11 +75,11 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">这什么东西</span>
             </button>
-            <a class="navbar-brand" href="sell/buyer/product/list?categoryType=1">图书商城</a>
+            <a class="navbar-brand" href="/sell/buyer/product/list?categoryType=1">图书商城</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="sell/buyer/product/list?categoryType=1">首页</a></li>
+                <li class="active"><a href="/sell/buyer/product/list?categoryType=1">首页</a></li>
                 <li><a href="Order.ftl">我的订单</a></li>
                 <li><a href="UserInfo.ftl">个人中心</a></li>
                 <li><a href="FriendLink.ftl">友情链接</a></li>
@@ -88,7 +88,7 @@
                 <#if Session["user"]?exists>
                     <li>欢迎您：${user.username}<a href="/sell/seller/loginOut">注销</a></li>
                 <#else>
-                    <li><a href="/sell/seller/start">登录</a></li>
+                    <li><a href="/sell/seller/login/start">登录</a></li>
                 </#if>
                 <li><a href="/sell/seller/login/registerInit">注册</a></li>
                 <li>

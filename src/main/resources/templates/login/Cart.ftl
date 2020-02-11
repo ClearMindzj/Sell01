@@ -31,7 +31,7 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">这什么东西</span>
             </button>
-            <a class="navbar-brand" href="Index.ftl">图书商城</a>
+            <a class="navbar-brand" href="/sell/buyer/product/list?categoryType=1">图书商城</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -68,6 +68,7 @@
                 <div class="col-sm-2 line-center">小计</div>
                 <div class="col-sm-1 line-center">操作</div>
             </div>
+
             <div class="col-sm-12  list-group-item">
                 <div class="col-sm-1 line-center" style="width: 50px;height: 50px;">
 

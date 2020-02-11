@@ -38,11 +38,11 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">这什么东西</span>
             </button>
-            <a class="navbar-brand" href="sell/buyer/product/list?categoryType=1">图书商城</a>
+            <a class="navbar-brand" href="/sell/buyer/product/list?categoryType=1">图书商城</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="sell/buyer/product/list?categoryType=1">首页</a></li>
+                <li class="active"><a href="/sell/buyer/product/list?categoryType=1">首页</a></li>
                 <li><a href="Order.ftl">我的订单</a></li>
                 <li><a href="UserInfo.ftl">个人中心</a></li>
                 <li><a href="FriendLink.ftl">友情链接</a></li>
@@ -70,7 +70,7 @@
 
     <ul class="nav nav-tabs" id="myTabs">
         <li class="active"><a href="/sell/buyer/product/list?categoryType=1">计算机</a></li>
-        <li><a href="#">文学</a></li>
+        <li><a href="/sell/buyer/product/list?categoryType=2">文学</a></li>
         <li><a href="#">军事科技</a></li>
         <li><a href="#">历史人文</a></li>
         <li><a href="#">金融财会</a></li>

@@ -23,6 +23,7 @@ import java.util.Map;
 @Controller
 @RequestMapping("/seller/login")
 public class LoginControl {
+    private String url="/sell/buyer/product/list?categoryType=1";
     @Autowired
     private BuyerLoginService buyerLoginService;
     @Autowired
@@ -46,7 +47,8 @@ public class LoginControl {
             UserInfo userInfo=buyerLoginRepository.findByUsername(username);
             session.setAttribute("user",userInfo);
             map.put("msg", s);
-            return new ModelAndView("login/index", map);
+            map.put("url",url);
+            return new ModelAndView("common/success", map);
         }else {
             map.put("msg",s);
             return new ModelAndView("login/Login");
@@ -86,8 +88,8 @@ public class LoginControl {
         return "login/Register";
     }
     @RequestMapping("/demo")
-    public String order() {
-        return "login/Order";
+    public String order()    {
+        return "login/Cart";
     }
 
     @RequestMapping("/demo1")
