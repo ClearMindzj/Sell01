@@ -86,7 +86,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right hidden-sm">
                 <#if Session["user"]?exists>
-                    <li>欢迎您：${user.username}<a href="/sell/seller/loginOut">注销</a></li>
+                    <li>欢迎您：${user.username}<a href="/sell/seller/login/loginOut">注销</a></li>
                 <#else>
                     <li><a href="/sell/seller/login/start">登录</a></li>
                 </#if>

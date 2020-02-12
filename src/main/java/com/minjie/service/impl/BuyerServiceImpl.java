@@ -1,8 +1,10 @@
 package com.minjie.service.impl;
 
+import com.minjie.dataobject.UserCart;
 import com.minjie.dto.OrderDTO;
 import com.minjie.enums.ResultEnum;
 import com.minjie.exception.SellException;
+import com.minjie.repository.BuyerCartRepository;
 import com.minjie.service.BuyerService;
 import com.minjie.service.OrderService;
 import lombok.extern.slf4j.Slf4j;
@@ -18,6 +20,20 @@ public class BuyerServiceImpl implements BuyerService {
 
     @Autowired
     private OrderService orderService;
+    @Autowired
+    private BuyerCartRepository buyerCartRepository;
+
+    @Override
+    public UserCart findByUserIdAndProductId(String userId, String productId) {
+        UserCart userCart=buyerCartRepository.findByUserIdAndProductId(userId,productId);
+        return userCart;
+    }
+
+    @Override
+    public void insertCart(UserCart userCart) {
+        buyerCartRepository.save(userCart);
+    }
+
     @Override
     public OrderDTO findOrderOne(String userId, String orderId) {
        return checkOrderOwener(userId,orderId);

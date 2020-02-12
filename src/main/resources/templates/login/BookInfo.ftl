@@ -39,9 +39,9 @@
             </ul>
             <ul class="nav navbar-nav navbar-right hidden-sm">
                 <#if Session["user"]?exists>
-                    <li>欢迎您：${user.username}<a href="/sell/seller/loginOut">注销</a></li>
+                    <li>欢迎您：${user.username}<a href="/sell/seller/login/loginOut">注销</a></li>
                 <#else>
-                    <li><a href="/sell/seller/start">登录</a></li>
+                    <li><a href="/sell/seller/login/start">登录</a></li>
                 </#if>
                 <li><a href="/sell/seller/login/registerInit">注册</a></li>
                 <li>
@@ -56,10 +56,11 @@
     <div class="col-sm-4">
             <img style="width: 100%; height: 500px; display: block;" src="${productInfo.productIcon}"  data-holder-rendered="true">
             <div class="caption center">
+                <h4>${msg!}</h4>
                 <h3>${productInfo.productName}</h3>
                 <p>价格:${productInfo.productPrice}</p>
                 <p>库存:${productInfo.productStock}</p>
-                <p><a class="btn btn-primary btn-block" role="button" href="#">立即购买</a> <a class="btn btn-default btn-block" role="button" href="#">加入购物车</a></p>
+                <p><a class="btn btn-primary btn-block" role="button" href="#">立即购买</a> <a class="btn btn-default btn-block" role="button" href="/sell/buyer/cart/insert?productId=${productInfo.productId}&userId=${(user.userId)!}" > 加入购物车</a></p>
             </div>
     </div>
     <div class="col-sm-8">
