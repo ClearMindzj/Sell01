@@ -2,6 +2,7 @@ package com.minjie.dto;
 
 import lombok.Data;
 
+
 /**
  * Create by zj on 2019/8/1
  */
@@ -17,5 +18,17 @@ public class CartDTO {
     public CartDTO(String productId, Integer productQuantity) {
         this.productId = productId;
         this.productQuantity = productQuantity;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "productId="+'\"' + productId + '\"' +
+                ", productQuantity=" + productQuantity +
+                '}';
+    }
+
+    public CartDTO() {
+
     }
 }

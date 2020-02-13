@@ -10,15 +10,30 @@
     <script src="../../Flat-UI-master/dist/js/flat-ui.min.js"></script>
     <title></title>
     <style>
-        .row{
+        .row {
+            margin-top: 20px;;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .pagination {
+            background: #cccccc;
+        }
+    </style>
+    <style>
+        .row {
             margin-left: 20px;
             margin-right: 20px;;
         }
-        .line-center{
-            line-height:50px;
+
+        .line-center {
+            line-height: 50px;
             text-align: center;
         }
-        .row input{
+
+        .row input {
             width: 50px;
         }
     </style>
@@ -64,52 +79,94 @@
             <div class="col-sm-12 thumbnail">
                 <div class="col-sm-4 line-center">图书</div>
                 <div class="col-sm-1 line-center">单价</div>
-                <div class="col-sm-4 line-center">数量 </div>
+                <div class="col-sm-4 line-center">数量</div>
                 <div class="col-sm-2 line-center">小计</div>
                 <div class="col-sm-1 line-center">操作</div>
             </div>
 
             <div class="col-sm-12  list-group-item">
                 <#list userCartList.content as userCartList>
-                <div class="col-sm-1 line-center" style="width: 50px;height: 50px;">
+                    <div class="col-sm-1 line-center" style="width: 50px;height: 50px;">
 
-                    <img src="${userCartList.productIcon}" style="height: 100%;" alt=""/>
-                </div>
-                <div class="col-sm-3 line-center">${userCartList.productName}</div>
-                <div class="col-sm-1 line-center">${userCartList.productPrice}</div>
-                <div class="col-sm-4 line-center">
-                    <button type="button" class="btn btn-default">
-                        <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
-                    </button>
-                    <input type="text" class="small" value="${userCartList.productQuantity}"/>
-                    <button type="button" class="btn btn-default">
-                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                    </button>
-                </div>
-                <div class="col-sm-2 line-center">${userCartList.productQuantity*userCartList.productPrice}</div>
-                <div class="col-sm-1 line-center"><a class="btn btn-danger" href="/sell/buyer/cart/delete?cartId=${(userCartList.cartId)!}">删除</a></div>
+                        <img src="${userCartList.productIcon}" style="height: 100%;" alt=""/>
+                    </div>
+                    <div class="col-sm-3 line-center">${userCartList.productName}</div>
+                    <div class="col-sm-1 line-center">${userCartList.productPrice}</div>
+                    <div class="col-sm-4 line-center">
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                        </button>
+                        <input type="text" class="small" value="${userCartList.productQuantity}"/>
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="col-sm-2 line-center">${userCartList.productQuantity*userCartList.productPrice}</div>
+                    <div class="col-sm-1 line-center"><a class="btn btn-danger"
+                                                         href="/sell/buyer/cart/delete?cartId=${(userCartList.cartId)!}">删除</a>
+                    </div>
                 </#list>
             </div>
+
+            <nav class="center">
+                <ul class="pagination  pagination-lg">
+                    <li>
+                        <a href="/sell/buyer/cart/list?page=1&userId=${(user.userId)!}" aria-label="Previous">
+                            <span aria-hidden="true">首页</span>
+                        </a>
+                    </li>
+
+                    <#if currentPage lte 1>
+                        <li><a href="#">上一页</a></li>
+                    <#else>
+                        <li><a href="/sell/buyer/cart/list?page=${currentPage-1}&userId=${(user.userId)!}">上一页</a></li>
+                    </#if>
+                    <#list 1..userCartList.getTotalPages() as index>
+                        <#if currentPage==index>
+                            <li class="disabled"><a href="#">${index}</a></li>
+                        <#else>
+                            <li><a href="/sell/buyer/cart/list?page=${index}&userId=${(user.userId)!}">${index}</a></li>
+                        </#if>
+
+                    </#list>
+                    <#if currentPage gte userCartList.getTotalPages()>
+                        <li class="disabled"><a href="#">下一页</a></li>
+                    <#else>
+                        <li><a href="/sell/buyer/cart/list?page=${currentPage+1}&userId=${(user.userId)!}">下一页</a></li>
+                    </#if>
+                    <li>
+                        <a href="/sell/buyer/cart/list?page=${userCartList.totalPages}&userId=${(user.userId)!}"
+                           aria-label="Next">
+                            <span aria-hidden="true">末页</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
 
 
             <div class="col-sm-12 thumbnail">
                 <div class=" col-sm-offset-4 col-sm-2 text-right">总数：</div>
-                <div class="col-sm-2">342</div>
+                <div class="col-sm-2">${totalNums!}</div>
                 <div class="col-sm-2 text-right">总价：</div>
-                <div class="col-sm-2">342</div>
+                <div class="col-sm-2">${cartAmount!}</div>
             </div>
         </div>
         <div class="col-sm-offset-7 col-sm-5" style="padding: 30px;">
-            <div class="col-sm-6 btn btn-success btn-block">继续购物</div>
-            <div class="col-sm-6  btn btn-success btn-block">提交订单</div>
+            <div class="col-sm-6 btn btn-success btn-block"><a href="/sell/buyer/product/list?categoryType=1">继续购物</a>
+            </div>
+            <form method="post" action="/sell/buyer/order/create">
+                <input type="hidden" name="name" value="${(user.username)!}">
+                <input type="hidden" name="phone" value="${(user.telephone)!}">
+                <input type="hidden" name="address" value="${(user.address)!}">
+                <input type="hidden" name="userId" value="${(user.userId)!}">
+                <input type="hidden" name="items" value=${items}>
+                <button type="submit" class="col-sm-6  btn btn-success btn-block">提交订单</button>
+            </form>
         </div>
     </div>
 </div>
 
 
 <!--footer-->
-<div class="navbar navbar-default navbar-static-bottom">
-    版权声明区
-</div>
 </body>
 </html>

@@ -22,9 +22,9 @@ public class OrderForm {
     @NotEmpty(message = "地址必填")
     private  String address;
 
-    //买家userid
+    //买家userId
     @NotEmpty(message = "user_id必填")
-    private  String userid;
+    private  String userId;
 
     //购物车
     @NotEmpty(message = "购物车不能为空")

@@ -52,7 +52,7 @@
         <div class="col-sm-12">
              <h1 class="text-center" style="    margin-bottom: 30px">用户注册</h1>
         </div>
-     <div>
+     <div style="color: red">
          ${msg!}
      </div>
         <div class="col-sm-6">

@@ -1,8 +1,10 @@
 package com.minjie.controller;
 
+import com.minjie.converter.CartDTO2Json;
 import com.minjie.dataobject.ProductInfo;
 import com.minjie.dataobject.UserCart;
 import com.minjie.dataobject.UserInfo;
+import com.minjie.dto.CartDTO;
 import com.minjie.service.BuyerService;
 import com.minjie.service.ProductService;
 import com.minjie.utils.KeyUtil;
@@ -13,6 +15,10 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -64,11 +70,24 @@ public class BuyerCartController {
                               @RequestParam(value = "size",defaultValue = "5") Integer size,
                                Map<String,Object> map){
         PageRequest request=new PageRequest(page-1,size);
-
+        BigDecimal cartAmount=new BigDecimal(BigInteger.ZERO);
         //查询对应用户购物车
         Page<UserCart> userCartList=buyerService.findByUserId(userId,request);
+        List<CartDTO> cartDTOList=new ArrayList<>();
+        for(UserCart userCart:userCartList.getContent()){
+            CartDTO cartDTO=new CartDTO();
+            cartDTO.setProductId(userCart.getProductId());
+            cartDTO.setProductQuantity(userCart.getProductQuantity());
+            cartDTOList.add(cartDTO);
+            cartAmount=userCart.getProductPrice().multiply(new BigDecimal(userCart.getProductQuantity())).add(cartAmount);
+        }
+        String items= CartDTO2Json.convert(cartDTOList);
+        Long totalNums=userCartList.getTotalElements();
+        map.put("items",items);
         map.put("userCartList",userCartList);
         map.put("currentPage",page);
+        map.put("cartAmount",cartAmount);
+        map.put("totalNums",totalNums);
         return new ModelAndView("login/Cart",map);
     }
 
