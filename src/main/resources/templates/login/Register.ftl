@@ -56,7 +56,7 @@
          ${msg!}
      </div>
         <div class="col-sm-6">
-            <form class="form-horizontal caption" method="post" action="/sell/seller/register">
+            <form class="form-horizontal caption" method="post" action="/sell/seller/login/register">
                 <div class="form-group">
                     <label for="username" class="col-sm-3 control-label">用户名</label>
                     <div class="col-sm-8">
