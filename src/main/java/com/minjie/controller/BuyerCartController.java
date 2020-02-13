@@ -2,12 +2,17 @@ package com.minjie.controller;
 
 import com.minjie.dataobject.ProductInfo;
 import com.minjie.dataobject.UserCart;
+import com.minjie.dataobject.UserInfo;
 import com.minjie.service.BuyerService;
 import com.minjie.service.ProductService;
 import com.minjie.utils.KeyUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpSession;
 import java.util.Map;
 
 /**
@@ -22,6 +27,8 @@ public class BuyerCartController {
 
     @Autowired
     private BuyerService buyerService;
+
+
 
     @GetMapping("/insert")
     public ModelAndView insert(@RequestParam("productId") String productId,
@@ -41,13 +48,41 @@ public class BuyerCartController {
             userCart.setProductName(productInfo.getProductName());
             userCart.setProductPrice(productInfo.getProductPrice());
             userCart.setProductQuantity(1);
+            userCart.setProductIcon(productInfo.getProductIcon());
         }else  {
             userCart.setProductQuantity(userCart.getProductQuantity()+1);
         }
         buyerService.insertCart(userCart);
         map.put("msg","加入购物车成功");
         map.put("productInfo",productInfo);
-        return new ModelAndView("/login/BookInfo");
-
+        return new ModelAndView("/login/BookInfo",map);
     }
+
+    @GetMapping("/list")
+    public ModelAndView list( @RequestParam("userId") String userId,
+                              @RequestParam(value = "page",defaultValue = "1") Integer page,
+                              @RequestParam(value = "size",defaultValue = "5") Integer size,
+                               Map<String,Object> map){
+        PageRequest request=new PageRequest(page-1,size);
+
+        //查询对应用户购物车
+        Page<UserCart> userCartList=buyerService.findByUserId(userId,request);
+        map.put("userCartList",userCartList);
+        map.put("currentPage",page);
+        return new ModelAndView("login/Cart",map);
+    }
+
+    @GetMapping("/delete")
+    public ModelAndView delete(@RequestParam("cartId") String cartId,
+                               HttpSession session,
+                               Map<String,Object> map){
+        buyerService.delete(cartId);
+        UserInfo userInfo= (UserInfo) session.getAttribute("user");
+
+        String url="/sell/buyer/cart/list?userId="+userInfo.getUserId();
+        map.put("msg","删除成功");
+        map.put("url",url);
+        return new ModelAndView("common/success",map);
+    }
+
 }

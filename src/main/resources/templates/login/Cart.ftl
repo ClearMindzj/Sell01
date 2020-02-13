@@ -70,60 +70,27 @@
             </div>
 
             <div class="col-sm-12  list-group-item">
+                <#list userCartList.content as userCartList>
                 <div class="col-sm-1 line-center" style="width: 50px;height: 50px;">
 
-                    <img src="../Flat-UI-master/dist/img/icons/png/Book.png" style="height: 100%;" alt=""/>
+                    <img src="${userCartList.productIcon}" style="height: 100%;" alt=""/>
                 </div>
-                <div class="col-sm-3 line-center">书名</div>
-                <div class="col-sm-1 line-center">单价</div>
+                <div class="col-sm-3 line-center">${userCartList.productName}</div>
+                <div class="col-sm-1 line-center">${userCartList.productPrice}</div>
                 <div class="col-sm-4 line-center">
                     <button type="button" class="btn btn-default">
                         <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
                     </button>
-                    <input type="text" class="small" value="123"/>
+                    <input type="text" class="small" value="${userCartList.productQuantity}"/>
                     <button type="button" class="btn btn-default">
                         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                     </button>
                 </div>
-                <div class="col-sm-2 line-center">小计</div>
-                <div class="col-sm-1 line-center"><button class="btn btn-danger">删除</button></div>
+                <div class="col-sm-2 line-center">${userCartList.productQuantity*userCartList.productPrice}</div>
+                <div class="col-sm-1 line-center"><a class="btn btn-danger" href="/sell/buyer/cart/delete?cartId=${(userCartList.cartId)!}">删除</a></div>
+                </#list>
             </div>
-            <div class="col-sm-12  list-group-item">
-                <div class="col-sm-1 line-center" style="width: 50px;height: 50px;">
-                    <img src="../Flat-UI-master/dist/img/icons/png/Book.png" style="height: 100%;" alt=""/>
-                </div>
-                <div class="col-sm-3 line-center">书名</div>
-                <div class="col-sm-1 line-center">单价</div>
-                <div class="col-sm-4 line-center">
-                    <button type="button" class="btn btn-default">
-                        <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
-                    </button>
-                    <input type="text" class="small" value="123"/>
-                    <button type="button" class="btn btn-default">
-                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                    </button>
-                </div>
-                <div class="col-sm-2 line-center">小计</div>
-                <div class="col-sm-1 line-center"><button class="btn btn-danger">删除</button></div>
-            </div>
-            <div class="col-sm-12  list-group-item">
-                <div class="col-sm-1 line-center" style="width: 50px;height: 50px;">
-                    <img src="../Flat-UI-master/dist/img/icons/png/Book.png" style="height: 100%;" alt=""/>
-                </div>
-                <div class="col-sm-3 line-center">书名</div>
-                <div class="col-sm-1 line-center">单价</div>
-                <div class="col-sm-4 line-center">
-                    <button type="button" class="btn btn-default">
-                        <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
-                    </button>
-                    <input type="text" class="small" value="123"/>
-                    <button type="button" class="btn btn-default">
-                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                    </button>
-                </div>
-                <div class="col-sm-2 line-center">小计</div>
-                <div class="col-sm-1 line-center"><button class="btn btn-danger">删除</button></div>
-            </div>
+
 
             <div class="col-sm-12 thumbnail">
                 <div class=" col-sm-offset-4 col-sm-2 text-right">总数：</div>

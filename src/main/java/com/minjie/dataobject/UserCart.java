@@ -29,6 +29,8 @@ public class UserCart {
 
     private Integer productQuantity;
 
+    private String productIcon;
+
     private Date createTime;
 
     private Date updateTime;

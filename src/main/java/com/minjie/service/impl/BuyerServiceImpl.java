@@ -9,7 +9,11 @@ import com.minjie.service.BuyerService;
 import com.minjie.service.OrderService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * Create by zj on 2019/8/3
@@ -33,6 +37,17 @@ public class BuyerServiceImpl implements BuyerService {
     public void insertCart(UserCart userCart) {
         buyerCartRepository.save(userCart);
     }
+
+    @Override
+    public Page<UserCart> findByUserId(String userId, Pageable pageable) {
+        return buyerCartRepository.findByUserId(userId,pageable);
+    }
+
+    @Override
+    public void delete(String cartId) {
+        buyerCartRepository.deleteByCartId(cartId);
+    }
+
 
     @Override
     public OrderDTO findOrderOne(String userId, String orderId) {

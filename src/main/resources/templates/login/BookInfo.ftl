@@ -56,7 +56,7 @@
     <div class="col-sm-4">
             <img style="width: 100%; height: 500px; display: block;" src="${productInfo.productIcon}"  data-holder-rendered="true">
             <div class="caption center">
-                <h4>${msg!}</h4>
+                <h5 style="color: red">${msg!}</h5>
                 <h3>${productInfo.productName}</h3>
                 <p>价格:${productInfo.productPrice}</p>
                 <p>库存:${productInfo.productStock}</p>

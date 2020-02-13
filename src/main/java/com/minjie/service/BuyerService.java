@@ -2,6 +2,12 @@ package com.minjie.service;
 
 import com.minjie.dataobject.UserCart;
 import com.minjie.dto.OrderDTO;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
  * 买家
@@ -14,6 +20,13 @@ public interface BuyerService {
 
     //加入购物车
     void insertCart(UserCart userCart);
+
+    //展示购物车
+    Page<UserCart> findByUserId(String userId, Pageable pageable);
+
+    //删除购物车某件物品
+
+    void delete(String cartId);
 
     //查询一个订单
     OrderDTO findOrderOne(String userId, String orderId);
