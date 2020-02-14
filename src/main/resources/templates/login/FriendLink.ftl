@@ -79,7 +79,7 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="Index.ftl">首页</a></li>
+                <li class="active"><a href="/sell/buyer/product/list?categoryType=1">首页</a></li>
                 <li><a href="Order.ftl">我的订单</a></li>
                 <li><a href="UserInfo.ftl">个人中心</a></li>
                 <li><a href="FriendLink.ftl">友情链接</a></li>
@@ -88,11 +88,11 @@
                 <#if Session["user"]?exists>
                     <li>欢迎您：${user.username}<a href="/sell/seller/login/loginOut">注销</a></li>
                 <#else>
-                    <li><a href="/sell/seller/start">登录</a></li>
+                    <li><a href="/sell/seller/login/start">登录</a></li>
                 </#if>
                 <li><a href="/sell/seller/login/registerInit">注册</a></li>
                 <li>
-                    <a href="Cart.ftl"><span class="glyphicon glyphicon-shopping-cart">购物车</span></a></li>
+                    <a href="/sell/buyer/cart/list?userId=${(user.userId)!}"><span class="glyphicon glyphicon-shopping-cart">购物车</span></a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>

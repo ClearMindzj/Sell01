@@ -1,7 +1,9 @@
 package com.minjie.controller;
 
 
+import com.minjie.converter.CartDTO2Json;
 import com.minjie.dataobject.ProductInfo;
+import com.minjie.dto.CartDTO;
 import com.minjie.enums.ProductStatusEnum;
 import com.minjie.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 
@@ -71,6 +76,13 @@ public class BuyerProductController {
                                Map<String,Object> map){
         //查询单个物品详情
         ProductInfo productInfo=productService.findOne(productId);
+        List<CartDTO> cartDTOList=new ArrayList<>();
+        CartDTO cartDTO=new CartDTO();
+        cartDTO.setProductId(productInfo.getProductId());
+        cartDTO.setProductQuantity(1);
+        cartDTOList.add(cartDTO);
+        String items= CartDTO2Json.convert(cartDTOList);
+        map.put("items",items);
         map.put("productInfo",productInfo);
         return  new ModelAndView("/login/BookInfo");
     }

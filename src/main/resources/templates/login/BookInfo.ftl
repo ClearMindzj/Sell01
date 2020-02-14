@@ -32,7 +32,7 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="Index.ftl">首页</a></li>
+                <li class="active"><a href="/sell/buyer/product/list?categoryType=1">首页</a></li>
                 <li><a href="Order.ftl">我的订单</a></li>
                 <li><a href="UserInfo.ftl">个人中心</a></li>
                 <li><a href="FriendLink.ftl">友情链接</a></li>
@@ -45,7 +45,7 @@
                 </#if>
                 <li><a href="/sell/seller/login/registerInit">注册</a></li>
                 <li>
-                    <a href="Cart.ftl"><span class="glyphicon glyphicon-shopping-cart">购物车</span></a></li>
+                    <a href="/sell/buyer/cart/list?userId=${(user.userId)!}"><span class="glyphicon glyphicon-shopping-cart">购物车</span></a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -60,7 +60,16 @@
                 <h3>${productInfo.productName}</h3>
                 <p>价格:${productInfo.productPrice}</p>
                 <p>库存:${productInfo.productStock}</p>
-                <p><a class="btn btn-primary btn-block" role="button" href="#">立即购买</a> <a class="btn btn-default btn-block" role="button" href="/sell/buyer/cart/insert?productId=${productInfo.productId}&userId=${(user.userId)!}" > 加入购物车</a></p>
+                <p>
+                <form method="post" action="/sell/buyer/order/create">
+                    <input type="hidden" name="name" value="${(user.username)!}">
+                    <input type="hidden" name="phone" value="${(user.telephone)!}">
+                    <input type="hidden" name="address" value="${(user.address)!}">
+                    <input type="hidden" name="userId" value="${(user.userId)!}">
+                    <input type="hidden" name="items" value=${items}>
+                    <button class="btn btn-primary btn-block" role="button" href="#">立即购买</button>
+                </form>
+                    <a class="btn btn-default btn-block" role="button" href="/sell/buyer/cart/insert?productId=${productInfo.productId}&userId=${(user.userId)!}" > 加入购物车</a></p>
             </div>
     </div>
     <div class="col-sm-8">

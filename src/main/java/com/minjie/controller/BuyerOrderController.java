@@ -2,6 +2,7 @@ package com.minjie.controller;
 
 import com.minjie.VO.ResultVO;
 import com.minjie.converter.OrderForm2OrderDTOConverter;
+import com.minjie.dataobject.UserInfo;
 import com.minjie.dto.OrderDTO;
 import com.minjie.enums.ResultEnum;
 import com.minjie.exception.SellException;
@@ -17,7 +18,9 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.List;
@@ -37,7 +40,7 @@ public class BuyerOrderController {
     private BuyerService buyerService;
     //创建订单  @Valid 表示要验证后面这个对象  验证结果返回到BindingResult bindingResult 对象里
     @PostMapping("/create")
-    public ResultVO<Map<String,String>> create(@Valid OrderForm orderForm, BindingResult bindingResult){
+    public ModelAndView create(@Valid OrderForm orderForm, BindingResult bindingResult, Map<String,Object> map){
         if(bindingResult.hasErrors()){
             log.error("【创建订单】参数不正确, orderForm={}",orderForm);
             throw  new SellException(ResultEnum.PARAM_ERROR.getCode(),
@@ -49,9 +52,13 @@ public class BuyerOrderController {
             throw  new SellException(ResultEnum.CART_EMPTY);
         }
         OrderDTO createResult=orderService.create(orderDTO);
-        Map<String,String > map=new HashMap<>();
+        String url="/sell/buyer/product/list?categoryType=1";
+        map.put("msg","购买成功,请继续购物");
+        map.put("url",url);
+       /* Map<String,String > map=new HashMap<>();
         map.put("orderId",createResult.getOrderId());
-        return ResultVOUtil.success(map);
+        return ResultVOUtil.success(map);*/
+       return new ModelAndView("common/success",map);
 
     }
     //订单列表

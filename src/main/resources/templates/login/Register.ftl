@@ -41,7 +41,7 @@
                 </#if>
                 <li><a href="/sell/seller/login/registerInit">注册</a></li>
                 <li>
-                    <a href="Cart.ftl"><span class="glyphicon glyphicon-shopping-cart">购物车</span></a></li>
+                    <a href="/sell/buyer/cart/list?userId=${(user.userId)!}"><span class="glyphicon glyphicon-shopping-cart">购物车</span></a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
