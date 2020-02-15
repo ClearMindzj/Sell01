@@ -69,8 +69,8 @@
     </div>
 
     <ul class="nav nav-tabs" id="myTabs">
-        <li class="active"><a href="/sell/buyer/product/list?categoryType=1">计算机</a></li>
-        <li><a href="/sell/buyer/product/list?categoryType=2">文学</a></li>
+        <li class="${active1!}"><a href="/sell/buyer/product/list?categoryType=1">计算机</a></li>
+        <li class="${active2!}"><a href="/sell/buyer/product/list?categoryType=2">文学</a></li>
         <li><a href="#">军事科技</a></li>
         <li><a href="#">历史人文</a></li>
         <li><a href="#">金融财会</a></li>

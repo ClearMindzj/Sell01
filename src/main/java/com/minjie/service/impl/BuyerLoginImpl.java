@@ -38,7 +38,7 @@ public class BuyerLoginImpl implements BuyerLoginService {
     @Override
     public String buyerRegister(UserInfo userInfo) {
         UserInfo userInfo1=buyerLoginRepository.findByUsername(userInfo.getUsername());
-        if(userInfo1==null){
+        if(userInfo1!=null){
             return "用户名已经存在";
         }else {
             buyerLoginRepository.save(userInfo);

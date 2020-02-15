@@ -77,7 +77,7 @@ public class LoginControl {
             return new ModelAndView("login/Register");
         } else {
             map.put("msg", msg);
-            map.put("url","/sell/seller/start");
+            map.put("url","/sell/seller/login/start");
             return new ModelAndView("common/success");
         }
 

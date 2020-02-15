@@ -66,9 +66,11 @@ public class BuyerProductController {
             }
 
         }*/
+        String a="active"+categoryType;
         map.put("productInfoList",productInfoList);
         map.put("currentPage",page);
         map.put("categoryType",categoryType);
+        map.put(a,"active");
         return new ModelAndView("/login/Index",map);
     }
     @GetMapping("/detail")
