@@ -2,7 +2,6 @@ package com.minjie.controller;
 
 import com.minjie.VO.ResultVO;
 import com.minjie.converter.OrderForm2OrderDTOConverter;
-import com.minjie.dataobject.UserInfo;
 import com.minjie.dto.OrderDTO;
 import com.minjie.enums.ResultEnum;
 import com.minjie.exception.SellException;
@@ -20,9 +19,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 

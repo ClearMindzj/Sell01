@@ -68,11 +68,12 @@ public class LoginControl {
         BeanUtils.copyProperties(userForm, userInfo);
         String userId= KeyUtil.genUniqueKey();
         userInfo.setUserId(userId);
-        String msg = buyerLoginService.buyerRegister(userInfo);
         if (bindingResult.hasErrors()) {
             map.put("msg", "请正确填写信息");
             return new ModelAndView("login/Register");
-        } else if (msg.equals("用户名已经存在")) {
+        }
+        String msg = buyerLoginService.buyerRegister(userInfo);
+         if (msg.equals("用户名已经存在")) {
             map.put("msg", msg);
             return new ModelAndView("login/Register");
         } else {

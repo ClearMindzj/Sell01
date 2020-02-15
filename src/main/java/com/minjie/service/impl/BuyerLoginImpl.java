@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by zhengjie on 2019/12/26.
@@ -38,7 +39,8 @@ public class BuyerLoginImpl implements BuyerLoginService {
     @Override
     public String buyerRegister(UserInfo userInfo) {
         UserInfo userInfo1=buyerLoginRepository.findByUsername(userInfo.getUsername());
-        if(userInfo1!=null){
+        Optional<UserInfo> userInfo2=Optional.ofNullable(userInfo1);
+        if(userInfo2.isPresent()){
             return "用户名已经存在";
         }else {
             buyerLoginRepository.save(userInfo);
