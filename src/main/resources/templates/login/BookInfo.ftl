@@ -66,7 +66,7 @@
                     <input type="hidden" name="phone" value="${(user.telephone)!}">
                     <input type="hidden" name="address" value="${(user.address)!}">
                     <input type="hidden" name="userId" value="${(user.userId)!}">
-                    <input type="hidden" name="items" value=${items}>
+                    <input type="hidden" name="items" value=${items!}>
                     <button class="btn btn-primary btn-block" role="button" href="#">立即购买</button>
                 </form>
                     <a class="btn btn-default btn-block" role="button" href="/sell/buyer/cart/insert?productId=${productInfo.productId}&userId=${(user.userId)!}" > 加入购物车</a></p>

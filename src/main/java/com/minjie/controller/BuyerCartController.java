@@ -59,9 +59,10 @@ public class BuyerCartController {
             userCart.setProductQuantity(userCart.getProductQuantity()+1);
         }
         buyerService.insertCart(userCart);
+        String url="/sell/buyer/product/detail?productId="+productId;
         map.put("msg","加入购物车成功");
-        map.put("productInfo",productInfo);
-        return new ModelAndView("/login/BookInfo",map);
+        map.put("url",url);
+        return new ModelAndView("common/success",map);
     }
 
     @GetMapping("/list")
