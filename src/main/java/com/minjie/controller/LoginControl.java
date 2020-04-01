@@ -99,7 +99,7 @@ public class LoginControl {
     }
     @RequestMapping("/bookInfo")
     public String bookInfo() {
-        return "login/bookInfo";
+        return "login/Order";
     }
 
 }
