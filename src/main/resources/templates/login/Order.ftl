@@ -56,9 +56,7 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/sell/buyer/product/list?categoryType=1">首页</a></li>
-                <li><a href="Order.ftl">我的订单</a></li>
-                <li><a href="UserInfo.ftl">个人中心</a></li>
-                <li><a href="FriendLink.ftl">友情链接</a></li>
+                <li><a href="/sell/buyer/order/listC?userId=${(user.userId)!}">我的订单</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right hidden-sm">
                 <#if Session["user"]?exists>
@@ -81,55 +79,23 @@
         </div>
         <div class="col-sm-12 thumbnail">
             <div class="col-sm-3 line-center">订单编号</div>
-            <div class="col-sm-2 line-center">订单状态</div>
-            <div class="col-sm-2 line-center">商品数量 </div>
+            <div class="col-sm-2 line-center">姓名</div>
+            <div class="col-sm-2 line-center">手机号 </div>
             <div class="col-sm-2 line-center">订单总价</div>
-            <div class="col-sm-3 line-center">操作</div>
+            <div class="col-sm-3 line-center">地址</div>
         </div>
         <div class="list-group">
-            <div class="col-sm-12  list-group-item" >
-                <div class="col-sm-3 line-center" onclick="myClick(1)">ahiudsfhjk-23423-23asd-12</div>
-                <div class="col-sm-2 line-center">未付款</div>
-                <div class="col-sm-2 line-center">12 </div>
-                <div class="col-sm-2 line-center">1231.00元</div>
-                <div class="col-sm-3 line-center">
-                    <button class="btn btn-danger">删除订单</button>
-                    <button class="btn btn-success">提交订单</button>
 
-                </div>
-            </div>
-            <div class="col-sm-12  list-group-item" >
-                <div class="col-sm-3 line-center" onclick="myClick(2)">ahiudsfhjk-23423-23asd-12</div>
-                <div class="col-sm-2 line-center">未付款</div>
-                <div class="col-sm-2 line-center">12 </div>
-                <div class="col-sm-2 line-center">1231.00元</div>
-                <div class="col-sm-3 line-center">
-                    <button class="btn btn-danger">删除订单</button>
-                    <button class="btn btn-success">提交订单</button>
 
-                </div>
-            </div>
+            <#list list as orderList>
             <div class="col-sm-12  list-group-item" >
-                <div class="col-sm-3 line-center" onclick="myClick(3)">ahiudsfhjk-23423-23asd-12</div>
-                <div class="col-sm-2 line-center">未付款</div>
-                <div class="col-sm-2 line-center">12 </div>
-                <div class="col-sm-2 line-center">1231.00元</div>
-                <div class="col-sm-3 line-center">
-                    <button class="btn btn-danger">删除订单</button>
-                    <button class="btn btn-success">提交订单</button>
-
-                </div>
+                <div class="col-sm-3 line-center" onclick="myClick(4)">${orderList.orderId}</div>
+                <div class="col-sm-2 line-center">${orderList.buyerName}</div>
+                <div class="col-sm-2 line-center">${orderList.buyerPhone}</div>
+                <div class="col-sm-2 line-center">${orderList.orderAmount}</div>
+                <div class="col-sm-2 line-center">${orderList.buyerAddress}</div>
             </div>
-            <div class="col-sm-12  list-group-item" >
-                <div class="col-sm-3 line-center" onclick="myClick(4)">ahiudsfhjk-23423-23asd-12</div>
-                <div class="col-sm-2 line-center">未付款</div>
-                <div class="col-sm-2 line-center">12 </div>
-                <div class="col-sm-2 line-center">1231.00元</div>
-                <div class="col-sm-3 line-center">
-                    <button class="btn btn-danger">删除订单</button>
-                    <button class="btn btn-success">提交订单</button>
-                </div>
-            </div>
+            </#list>
 
     </div>
 </div>

@@ -1,7 +1,9 @@
 package com.minjie.service;
 
+import com.minjie.dataobject.OrderMaster;
 import com.minjie.dataobject.UserCart;
 import com.minjie.dto.OrderDTO;
+import org.springframework.core.annotation.Order;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Modifying;
@@ -34,5 +36,7 @@ public interface BuyerService {
     //取消订单
     OrderDTO cancelOrder(String userId, String orderId);
 
+    //查询所有订单
+    List<OrderMaster> findList(String userId);
 
 }

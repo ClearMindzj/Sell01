@@ -29,9 +29,7 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/sell/buyer/product/list?categoryType=1">首页</a></li>
-                <li><a href="Order.ftl">我的订单</a></li>
-                <li><a href="UserInfo.ftl">个人中心</a></li>
-                <li><a href="FriendLink.ftl">友情链接</a></li>
+                <li><a href="/sell/buyer/order/listC?userId=${(user.userId)!}">我的订单</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right hidden-sm">
                 <li><a href="/sell/seller/login/start">登录</a></li>

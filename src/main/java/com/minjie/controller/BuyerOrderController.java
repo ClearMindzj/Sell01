@@ -2,6 +2,7 @@ package com.minjie.controller;
 
 import com.minjie.VO.ResultVO;
 import com.minjie.converter.OrderForm2OrderDTOConverter;
+import com.minjie.dataobject.OrderMaster;
 import com.minjie.dto.OrderDTO;
 import com.minjie.enums.ResultEnum;
 import com.minjie.exception.SellException;
@@ -71,6 +72,14 @@ public class BuyerOrderController {
         Page<OrderDTO> orderDTOPage=orderService.findList(openid,request);
 
         return ResultVOUtil.success(orderDTOPage.getContent());
+    }
+    //客户端订单
+    @RequestMapping("/listC")
+    public ModelAndView listC(@RequestParam("userId")
+                              String userId,Map<String,Object> map){
+        List<OrderMaster> list=buyerService.findList(userId);
+        map.put("list",list);
+        return new ModelAndView("login/Order");
     }
     //订单详情
      @GetMapping("/detail")

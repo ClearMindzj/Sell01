@@ -5,10 +5,13 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
+
 /**
  * Create by zj on 2019/7/31
  */
 public interface OrderMasterRepository extends JpaRepository<OrderMaster,String> {
 
     Page<OrderMaster> findByUserId(String userid,Pageable pageable);
+    List<OrderMaster> findByUserId(String userId);
 }
